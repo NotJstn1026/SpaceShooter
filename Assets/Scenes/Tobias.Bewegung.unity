@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e114c125f6f8547a306519b08ad115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 5521757050961332141, guid: a80780bd337a54e4b8f1f972edc0d081, type: 3}
   spawnIntervall: 3
 --- !u!4 &1052087252
 Transform:
@@ -491,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 1052087250}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6221077, y: -3.1725323, z: 0.08031866}
+  m_LocalPosition: {x: 0.04, y: 4.99, z: 0.08031866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -544,6 +544,7 @@ GameObject:
   - component: {fileID: 1397581852}
   - component: {fileID: 1397581851}
   - component: {fileID: 1397581854}
+  - component: {fileID: 1397581855}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -656,6 +657,18 @@ PolygonCollider2D:
       - {x: 0.13907093, y: 0.23264146}
       - {x: 0.31003582, y: 0.34908098}
   m_UseDelaunayMesh: 0
+--- !u!114 &1397581855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397581849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d541b3de0d260594a88ae12eb2318f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1432174980
 GameObject:
   m_ObjectHideFlags: 0

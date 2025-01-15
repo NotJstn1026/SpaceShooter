@@ -9,17 +9,21 @@ public class ScoreManager : MonoBehaviour
 
     private void OnEnable()
     {
-        //TODO: Subscribe IncreaseScore to OnObjectDestroyedEvent
+        Enemy.OnDestroyed += IncreaseScore;
     }
 
     private void OnDisable()
     {
-        
+        Enemy.OnDestroyed -= IncreaseScore;
     }
 
     private void Start() => DisplayScore();
 
-    private void IncreaseScore(int amount) => score += amount;
+    private void IncreaseScore(int amount)
+    {
+        score += amount;
+        DisplayScore();
+    }
 
     private void DisplayScore() => scoreText.text = $"{score}";
 

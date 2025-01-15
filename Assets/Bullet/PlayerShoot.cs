@@ -39,7 +39,8 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bulletClone = Instantiate(bullet, player.transform.position, player.transform.rotation);
+        GameObject bulletClone = Instantiate(bullet, player.transform.position + new Vector3(0, 2, 0), player.transform.rotation);
         bulletClone.GetComponent<Rigidbody2D>().velocity = Vector3.up * bulletSpeed;
+        //bulletClone.GetComponent<Rigidbody>().AddForce(Vector2.up * 10, ForceMode.Impulse);
     }
 }

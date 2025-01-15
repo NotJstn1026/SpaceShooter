@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,7 @@ using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-
-    public UnityAction<int> onDestroyed;
+    public static Action<int> OnDestroyed;
 
     public int reward = 10;
 
@@ -29,14 +29,14 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            onDestroyed?.Invoke(reward);
+            OnDestroyed?.Invoke(reward);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            onDestroyed?.Invoke(reward);
-
+            OnDestroyed?.Invoke(reward);
+            Destroy(gameObject);
         }
     }
 }

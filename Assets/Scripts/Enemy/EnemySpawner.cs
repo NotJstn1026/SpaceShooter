@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnObstacles());   
+        StartCoroutine(SpawnObstacles());       
     }
 
     private void Spawn()

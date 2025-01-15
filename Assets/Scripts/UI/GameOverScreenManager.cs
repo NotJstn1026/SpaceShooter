@@ -44,6 +44,10 @@ public class GameOverScreenManager : MonoBehaviour
 
     private void OpenGameOverScreen() //Gets called on OnDie-Event
     {
+        Time.timeScale = 0;
+
+        SetFinalScoreText();
+
         gameOverScreen.SetActive(true);
     }
 
@@ -59,6 +63,8 @@ public class GameOverScreenManager : MonoBehaviour
 
     private void RestartScene()
     {
+        Time.timeScale = 1;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
