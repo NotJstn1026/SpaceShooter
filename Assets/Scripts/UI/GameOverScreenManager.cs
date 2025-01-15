@@ -28,7 +28,7 @@ public class GameOverScreenManager : MonoBehaviour
 
     private void OnEnable()
     {
-        //TODO: Subscribe OpenGameOverScreen to OnDIeEvent
+        PlayerStatsHandler.OnDie += OpenGameOverScreen;
 
         restartButton.onClick.AddListener(RestartScene);
         goToMenuButton.onClick.AddListener(GoBackToMenuScene);
@@ -36,6 +36,8 @@ public class GameOverScreenManager : MonoBehaviour
 
     private void OnDisable()
     {
+        PlayerStatsHandler.OnDie -= OpenGameOverScreen;
+
         restartButton.onClick.RemoveListener(RestartScene);
         goToMenuButton.onClick.RemoveListener(GoBackToMenuScene);
     }

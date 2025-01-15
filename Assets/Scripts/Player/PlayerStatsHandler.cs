@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerStatsHandler : MonoBehaviour
 {
-    private event Action OnDie;
+    public static event Action OnDie;
+
 
     private int healthPoints = 1;
     public int HealthPoints
