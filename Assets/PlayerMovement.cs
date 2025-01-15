@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontalInput;
     private float verticalInput;
+    private Vector2 movementDirection;
 
     private Vector2 velocity;
 
@@ -34,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
         verticalInput = Input.GetAxisRaw("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        movementDirection = new Vector2(horizontalInput, verticalInput).normalized;
 
-        velocity = new Vector2(horizontalInput * movespeed, verticalInput * movespeed);
+        velocity = new Vector2(movementDirection.x * movespeed, movementDirection.y * movespeed);
     }
 }
