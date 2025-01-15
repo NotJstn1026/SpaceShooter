@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class PlayerStatsHandler : MonoBehaviour
 {
-    public event Action OnDie;
+    private event Action OnDie;
+
     private int healthPoints = 1;
     public int HealthPoints
     {
         get { return healthPoints; }
+    }
+
+    public void AddMethodeOnDie(Action action)
+    {
+        OnDie += action;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
